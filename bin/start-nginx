@@ -10,7 +10,7 @@ mkdir -p bin/config
 erb config/config.yml.erb > bin/config/config.yml
 
 # Create token cache for vouch-proxy
-mkdir -p data/
+mkdir -p bin/data/
 
 n=1
 while getopts :f option ${@:1:2}
