@@ -6,7 +6,8 @@ mkfifo $psmgr
 
 # Evaluate config to get $PORT
 erb config/nginx.conf.erb > config/nginx.conf
-erb config/config.yml.erb > config/config.yml
+mkdir -p bin/config
+erb config/config.yml.erb > bin/config/config.yml
 
 # Create token cache for vouch-proxy
 mkdir -p data/
