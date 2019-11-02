@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/static/img/favicon.ico" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <title>Vouch Proxy: {{ .Msg }}</title>
+  </head>
+  <body>
+<div class="top">
+  <a href="https://github.com/vouch/vouch-proxy"><img src="/static/img/multicolor_V_500x500.png"/></a>
+  <a href="https://github.com/vouch/vouch-proxy"><span>Vouch Proxy</span></a>
+</div>
+{{ if .Testing }}
+<p class="test">
+<h2>-- test mode --</h2>
+The config file includes <code>testing: true</code>
+<p/>
+All 302 redirects will be captured and presented as links here
+{{ end }}
+
+<h1>{{ .Msg }}</h1>
+
+<ul>
+  <li><a href="/login">login</a></li>
+  <li><a href="/logout">logout</a></li>
+  <li><a href="/validate">validate</a></li>
+{{ if .TestURLs }}
+  {{ range $url := .TestURLs}}
+  <li><a href="{{ $url }}">{{ $url }}</a></li>
+  {{ end }}
+{{ end }}
+</ul>
+
+For support, please contact your network administrator or whomever configured Nginx to use Vouch Proxy.
+<p/>
+For help with <a href="https://github.com/vouch/vouch-proxy">Vouch Proxy</a> or to file a bug report, please see the project page at <a href="https://github.com/vouch/vouch-proxy">https://github.com/vouch/vouch-proxy</a>
+<p/>
+  </body>
+</html>

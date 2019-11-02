@@ -5,3 +5,4 @@ apt --yes install golang
 go get -v github.com/vouch/vouch-proxy
 go build github.com/vouch/vouch-proxy
 mv vouch-proxy $1
+cp -r /root/go/src/github.com/vouch/vouch-proxy/templates/ $1
