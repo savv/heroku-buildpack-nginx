@@ -9,6 +9,9 @@ echo "-----> nginx-buildpack: Installed ${nginx_version} to app/bin"
 cp bin/start-nginx "$1/bin/"
 echo '-----> nginx-buildpack: Added start-nginx to app/bin'
 
+cp "bin/vouch-proxy" "$1/bin/vouch-proxy"
+echo '-----> nginx-buildpack: Added vouch-proxy to app/bin'
+
 mkdir -p "$1/config"
 
 if [[ ! -f $1/config/mime.types ]]; then
